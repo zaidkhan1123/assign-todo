@@ -7,13 +7,6 @@ function Todo() {
     const [buttonDisabled, setButtondisabled] = useState(false);
 
 
-    
-    //   if(input.length > 1) {
-    //     setButtondisabled[false]
-    //   } else {
-    //     setButtondisabled[true]
-    //   }
-    // }
 
 
 
@@ -22,6 +15,7 @@ function AddItems(){
       const newitem = [...item,input]
       setInput("");
       return  newitem;
+       
     })
      
 }
@@ -41,7 +35,7 @@ function REmoveAll(){
   return (
     <div className="container-fluid">
         <div className="row ">
-            <div className="col-md-12 col-lg-4  text-center mt-5">
+            <div className="col-md-12  text-center mt-5">
                 <h1 className='text fw-bold text-center mt-5'>Todo list</h1>
                 <input  type="text" placeholder='Add items'value={input} minLength={1} required onChange={(e)=>{setInput(e.target.value)}} /> 
                 <button className='btn' onClick={AddItems} >Add</button>
@@ -50,7 +44,7 @@ function REmoveAll(){
          {item !=[] && item.map((data,i)=>{
           return (
             <div className="row" >
-            <div className="col-md-12 col-lg-4 text-center">
+            <div className="col-md-12  text-center">
             <h3 className='span text-white' key={i}>{data}
              <i class="fa-sharp fa-solid fa-trash " onClick={()=>itemDelet(i)} ></i> 
               </h3>
@@ -65,15 +59,14 @@ function REmoveAll(){
          
          </div> : ""
            }
+
+          {item.length >=1 ? "" : <div className="row">
+            <div className="col-md-12 text-center mt-5">
+            <img  alt="" src={image}/>
+            </div>   
+
+        </div>}    
        
-        
-        
-      
-        <div className="row">
-            <div className="col text-center mt-5">
-            <img alt="" src={image}/>
-            </div>
-        </div>
     </div>
   )
   }
