@@ -41,7 +41,7 @@ function REmoveAll(){
   return (
     <div className="container-fluid">
         <div className="row ">
-            <div className="col-md-12 text-center mt-5">
+            <div className="col-md-12 col-lg-4  text-center mt-5">
                 <h1 className='text fw-bold text-center mt-5'>Todo list</h1>
                 <input  type="text" placeholder='Add items'value={input} minLength={1} required onChange={(e)=>{setInput(e.target.value)}} /> 
                 <button className='btn' onClick={AddItems} >Add</button>
@@ -50,7 +50,7 @@ function REmoveAll(){
          {item !=[] && item.map((data,i)=>{
           return (
             <div className="row" >
-            <div className="col-md-12 text-center">
+            <div className="col-md-12 col-lg-4 text-center">
             <h3 className='span text-white' key={i}>{data}
              <i class="fa-sharp fa-solid fa-trash " onClick={()=>itemDelet(i)} ></i> 
               </h3>
