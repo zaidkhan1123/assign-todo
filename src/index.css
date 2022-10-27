@@ -2,11 +2,11 @@ body{
     background-color: rgba(26, 32, 44 )
 }
 
-.container-fluid{
+/* .container-fluid{
     height:auto;
     width: 100%;
     background-color: rgba(26, 32, 44);
-}
+} */
 .text{
     background-image: linear-gradient(to bottom right, red, yellow);
     background-clip: text;
@@ -19,6 +19,7 @@ input{
     border: none;
     width: 230px;
     text-align: center;
+    margin-right: 2px;
     
 }
 button{
@@ -58,3 +59,4 @@ i:hover{
 input:valid + button {
     pointer-events: all !important;
 }
+ 
