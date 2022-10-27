@@ -2,11 +2,11 @@ body{
     background-color: rgba(26, 32, 44 )
 }
 
-/* .container-fluid{
-    height:auto;
+.container-fluid{
+    height:100vh;
     width: 100%;
     background-color: rgba(26, 32, 44);
-} */
+}
 .text{
     background-image: linear-gradient(to bottom right, red, yellow);
     background-clip: text;
@@ -42,9 +42,19 @@ button{
     border-radius: 10px;
      background-color: rgba(26, 32, 44);
      text-align: center;
+     padding: 3px 15px;
+     min-width: 300px;
+     margin-top: 2px
 }
+
+i{
+    margin-left: 30px;
+    font-size: 22px;
+}
+
 i:hover{
     color: rgb(255, 0, 0);
+    font-size: 26px;
     
 }
 .new-btn{
@@ -60,3 +70,14 @@ input:valid + button {
     pointer-events: all !important;
 }
  
+.image{
+    border-radius: 20px;
+}
+.darkimage{
+    width: 7%;
+}
+.form-check-input{
+    display: none;
+} 
+    
+
