@@ -12,7 +12,7 @@ function Todo() {
 
 function AddItems(){
     setItem((item)=>{
-      const newitem = [...item,input]
+      const newitem = [input,...item]
       setInput("");
       return  newitem;
        
