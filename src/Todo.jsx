@@ -53,7 +53,11 @@ function itemDelet (i){
 }
 
 function REmoveAll(){
+var check = window.confirm("You Really Want to Delet All ! ")
+if(check){
   setItem([])
+}
+ 
 }
 
 
