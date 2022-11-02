@@ -32,9 +32,9 @@ button{
      width: 83px;
     
 }
-.btn {
+/* .btn {
     pointer-events: none;
-}
+} */
 .span{
     width:auto;
     border: 1px solid rgb(97, 94, 88);   
@@ -66,10 +66,10 @@ i:hover{
 
 }
 
-input:valid + button {
+/* input:valid + button {
     pointer-events: all !important;
 }
- 
+  */
 .image{
     border-radius: 20px;
 }

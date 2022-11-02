@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import image from "./img.png"
 import dark from "./dark-mode.png"
+import Modal from './Modal';
 function Todo() {
 
     const [input, setInput] = useState('');
@@ -35,12 +36,15 @@ else{
   
 
 function AddItems(){
+  if(input){
     setItem((item)=>{
       const newitem = [input,...item]
       setInput("");
       return  newitem;
        
     })
+  }
+    
      
 }
    
@@ -53,16 +57,20 @@ function itemDelet (i){
 }
 
 function REmoveAll(){
-var check = window.confirm("You Really Want to Delet All ! ")
-if(check){
-  setItem([])
-}
+
+  setItem('')
+
  
 }
 
+function editFunc(i){
+setInput(item,[i])
+}
+
+
 
   return (
-
+<>
     <div className="container-fluid" style={darkmood}>
       <div className="row">
         <div className="col mt-4">
@@ -93,15 +101,18 @@ if(check){
             <div className="col-md-12  text-center">
             <h3 className='span text-white' key={i}>{data}
              <i class="fa-sharp fa-solid fa-trash "  onClick={()=>itemDelet(i)} ></i> 
+          
               </h3>
-            
+             
+             
             </div>
         </div>
         
           );
          })}
          {item.length >= 1 ?   <div className="row">
-          <div className="col-md-12 text-center mt-5 me-3"><button onClick={REmoveAll} className='new-btn'>Remove All</button></div>
+          <div className="col-md-12 text-center mt-5 me-3"><button data-bs-toggle="modal"
+                data-bs-target="#exampleModal" className='new-btn'>Remove All</button></div>
          
          </div> : ""
            }
@@ -114,7 +125,12 @@ if(check){
         </div>}    
        
     </div>
+
+    <Modal remove={REmoveAll}/>
+    </>
   )
+
+  
   }
 
 export default Todo
